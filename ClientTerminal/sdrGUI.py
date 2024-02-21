@@ -168,9 +168,9 @@ def shutdown():
 if __name__ == "__main__":
     
     app = GUIApp()
-    commander = Commander(ip_address="192.168.0.90")
-    data = testClient(app=app, ip_address="192.168.0.90")
-    status_client = SystemStatusClient(app=app, ip_address="192.168.0.90")
+    commander = Commander(ip_address=sys.argv[1])
+    data = testClient(app=app, ip_address=sys.argv[1])
+    status_client = SystemStatusClient(app=app, ip_address=sys.argv[1])
 
     signal.signal(signal.SIGINT,signal_handler)
 
