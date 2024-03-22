@@ -29,8 +29,9 @@ class testClient(threading.Thread):
 
         # Process the received data
             numpy_array_list = data["frame"]
+            frame_size = data["frame_size"]
             numpy_array = np.array(numpy_array_list, dtype=np.float64)
-            numpy_array = numpy_array.reshape((480,640))  # Adjust the shape as needed
+            numpy_array = numpy_array.reshape((frame_size[1], frame_size[0]))  # Adjust the shape as needed
             print("Received NumPy array:")
             print(numpy_array)
 
